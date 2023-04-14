@@ -1,0 +1,17 @@
+version: '3'
+services:
+  api:
+    build: ./<path to backend Dockerfile>
+    ports: 
+      - "8000:8000"
+    depends_on:
+      - db
+  db:
+    build: ./<path to redis Dockerfile>
+    ports:
+      - "6379:6379"
+
+  frontend:
+    build: ./<path to frontend dockerfile>
+    ports:
+      - "80:80"    
